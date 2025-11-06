@@ -327,8 +327,8 @@ body {
     transform: none;
 }
 .card{
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 350px;
     margin: 50px;
     box-shadow: 5px 5px 20px black;
     overflow: hidden;
@@ -1073,5 +1073,6 @@ img{
     font-size: 25px;
   }
 }
+
 
 
