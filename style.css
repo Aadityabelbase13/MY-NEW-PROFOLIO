@@ -333,6 +333,7 @@ body {
     box-shadow: 5px 5px 20px black;
     overflow: hidden;
     position: relative;
+    left: -1px;
 }
 img{
     height: 500px;
@@ -1072,4 +1073,5 @@ img{
     font-size: 25px;
   }
 }
+
 
