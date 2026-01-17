@@ -7,54 +7,59 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body { 
+   background-color: white;
   font-family: 'Arial', sans-serif;
-  background-color: white;
   color: #131414;
-  height: 100vh;
   overflow-x: hidden;
   margin: 0;
-  padding-top: 80px;
+  padding-top: 0px;
 }
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   z-index: 1000; 
 }
-.navbar{
+.logo {
+  cursor: pointer;
+    height: 70px;
+    width: 70px;
+  transform: translate(40px,5px);
+}
+.navbar {
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 80px;
-  background: white;
-  z-index: 1000;
-}
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #131414;
-  transform: translate(50px,-0.1px);
-}
-.logo span {
-  color: rgb(0, 102, 204);
-}
-.nav-links {
   display: flex;
-  font-size: 20px;
-  flex-direction: row;
-  gap: 2rem;
-  transform: translateX(1050px);
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  padding: 0.5rem 2rem;
+  transition: all 0.3s ease;
+  z-index: 100;
 }
+
+/* Links container */
+.nav-links {
+  font-size: 20px;
+  position: relative;
+  left: -200px;
+  display: flex;    /* important for gap to work */
+  gap: 5rem;        /* space between links */
+}
+
+/* Each link */
 .nav-links a {
   text-decoration: none;
-  color: #131414;
+  color: inherit;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
+
+/* Hover underline effect */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -65,32 +70,76 @@ header {
   background: #007bff;
   transition: width 0.3s ease;
 }
+
 .nav-links a:hover {
   color: #007bff;
 }
+
 .nav-links a:hover::after {
   width: 100%;
 }
-.navlink{
-  transform: translateY(-10px);
-  display: flex;
-  gap: 3rem;
-}
-.imge{
-  position: relative;
-  top: 90px;
-  left: 900px;
+
+/* Transparent navbar for home */
+.navbar.transparent {
+  background: transparent;
+  color: white;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #fdfdfd; /* slightly softer white */
-  color: #131414;
-  height: 100vh;
-  display: flex;
-  font-family: "Montserrat", sans-serif;
+.navbar.transparent a {
+  color: white;
 }
+
+/* Solid navbar for other sections */
+.navbar.solid {
+  background: white;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar.solid a {
+  color: black;
+}
+
+
+
+#home{
+  height: 100vh;  
+  background-color: gray;
+
+
+}
+.text1, .animatedtext, .sub-tittle, .btn {
+  position: relative; /* important */
+  z-index: 2; /* above the black background */
+}
+
+body{
+  background-color: white;
+}
+/* image container */
+.hero-right {
+    position: relative;
+    left: 850px;
+    top: 0px;
+  width: 50%;
+  max-height: 100vh;
+  background: #000;
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+
+
+/* IMAGE */
+.hero-right img {
+  min-height: 100vh;
+  position: relative;
+  left: 100px;
+  object-fit: cover;
+
+}
+
+
 
 /* Main text */
 .text1{
@@ -98,13 +147,13 @@ body {
 }
 
 .text1a{
-  transform: translateY(-230px);
+  transform: translateY(-470px);
   text-shadow: 2px 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
 /* Animated text */
 .animatedtext{
-  transform: translateY(-235px);
+  transform: translateY(-450px);
 }
 
 .animated-text {
@@ -130,7 +179,7 @@ body {
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
-  background-color: white;
+  background-color: gray;
   border-left: 2px solid rgb(0,102,204);
   right: -8px;
   animation: cursor .8s infinite, typing 20s steps(14) infinite;
@@ -154,8 +203,8 @@ body {
 }
 
 /* Subtitle */
-.subtitle{
-  transform: translate(200px,-230px);
+.sub-tittle{
+  transform: translate(200px,-430px);
   font-weight: 500;
   letter-spacing: 2px;
   color: #333;
@@ -165,8 +214,8 @@ body {
 /* Button style */
 .btn {
   position: relative;
-  left: 350px;
-  top: -220px;
+  left: 300px;
+  top: -400px;
   cursor: pointer;
   width: 150px;
   height: 50px;
@@ -515,6 +564,7 @@ img{
   background-color: #131414;
   padding: 20px;
   display: flex;
+  position: relative;
   top: 200px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
